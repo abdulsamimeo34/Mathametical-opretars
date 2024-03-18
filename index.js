@@ -1,27 +1,22 @@
-import inquirer from "inquirer";
-const answer = await inquirer.prompt([
-    { message: "Enter First Number", type: "number", name: "firstnumber" },
-    { message: "Enter second number", type: "number", name: "secondnumber" },
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var inquirer_1 = require("inquirer");
+var answers = await inquirer_1.default.prompt([
     {
-        message: "select one of the operators to perform action",
+        type: "number",
+        name: "numberone",
+        message: "kindily enter your first no:"
+    },
+    {
+        type: "number",
+        name: "numbertwo",
+        message: "kindily enter your second no:"
+    },
+    {
         type: "list",
-        name: "opretor",
-        choices: ["Addition", "Subtraction", "Multiplication", "Division"],
+        name: "operator",
+        choices: ["*", "+", "-", "/"],
+        message: "select operator:"
     },
 ]);
-// conditional statement
-if (answer.opretor === "Addition") {
-    console.log(+answer.firstnumber + answer.secondnumber);
-}
-else if (answer.opretor === 'subtraction') {
-    console.log(answer.firstnumber - answer.secondnumber);
-}
-else if (answer.opretor === 'multipilication') {
-    console.log(answer.firstnumber * answer.secondnumber);
-}
-else if (answer.opretor === 'division') {
-    console.log(answer.firstnumber / answer.secondnumber);
-}
-else {
-    ('please select valid opretar');
-}
+console.log(answers);
